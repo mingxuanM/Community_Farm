@@ -1,0 +1,5 @@
+{
+  "name": "Sutton_Community_Farm",
+  "app_id": "",
+  "gulpStartupTasks": ["sass", "watch"]
+}

@@ -1,0 +1,32 @@
+<ion-view title="Visitor Registration Data" id="page13">
+  <ion-content padding="true" class="has-header">
+
+
+
+    <div id="visitorTable" class="table-scroll">
+      <table width="120%">
+        <thead>
+        <tr>
+          <th>Visitor ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of Birth</th>
+          <th>Email</th>
+          <th>Phone No</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="people in visitors">
+          <td>{{people.id}}</td>
+          <td>{{people.firstname}}</td>
+          <td>{{people.lastname}}</td>
+          <td>{{people.dateOfBirth}}</td>
+          <td>{{people.email}}</td>
+          <td>{{people.phoneNo}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,399 @@
+<ion-view title="Registration" id="page7">
+  <ion-content padding="true" style="background: url(img/HFEy9HUEQilRMRkcJcSL_vegetables-752153_1920.jpg) no-repeat top;background-size:cover;" class="has-header">
+    <div class="spacer" style="width: 300px; height: 170px;"></div>
+    <div class="item item-body" id="register-list-item-container12" ng-show="registered">
+      <h1 id="register-heading11" style="color:#184B20;font-weight:300;text-align:center;">You have finished all our questions. Thank you for registering!</h1>
+      <a ui-sref="menu.volunteers" id="register-button16" ng-click="init_registered()" style="color:#184B20;" class="button button-stable  button-block button-outline">Done</a>
+
+    </div>
+    <div class="item item-body reg-background" id="register-list-item-container2" ng-show="!registered">
+      <ion-list id="register-list6" ng-show="!registered">
+        <ion-item class="item-avatar" id="register-list-item14" ng-show="question==0">
+          <h2>Welcome to Sutton Community Farm!</h2>
+          <p style="white-space:normal;">We'd love to know more about you</p>
+        </ion-item>
+      </ion-list>
+
+
+      <form id="register-form14" class="list form" name="regform1" ng-show="question==0" ng-submit="register1()">
+        <label class="item item-input" id="register-input23">
+          <span class="input-label">First name</span>
+          <input type="text" placeholder="" ng-required="true" name="regUser.firstname" ng-model="regUser.firstname">
+        </label>
+
+        <label class="item item-input" id="register-input20">
+          <span class="input-label">Last name</span>
+          <input type="text" placeholder="" ng-required="true" name="regUser.lastname" ng-model="regUser.lastname">
+        </label>
+
+        <label class="item item-input" id="register-input22">
+          <span class="input-label">Address</span>
+          <input type="text" placeholder="" ng-required="true" name="regUser.address" ng-model="regUser.address">
+        </label>
+        <label class="item item-input" id="register-input24">
+          <span class="input-label">Phone number</span>
+          <input type="tel" placeholder="" name="regUser.phone" ng-model="regUser.phone">
+        </label>
+        <label class="item item-input" id="register-input25">
+          <span class="input-label">Email address</span>
+          <input type="email" placeholder="" ng-required="true" name="regUser.email" ng-model="regUser.email">
+        </label>
+        <ion-checkbox id="register-checkbox8" name="regUser.over16" ng-model="regUser.over16">Are you over 16 years old?</ion-checkbox>
+        <button type="submit" ng-disabled="regform1.$invalid || !regUser.over16" ng-click="next()" id="register-button9" style="color:#000000;" class="button button-stable  button-block">Register</button>
+      </form>
+
+      <form id="register-form10" class="list" name="regform2" ng-show="question==1" ng-submit="register2()">
+
+          <div class="item item-body" id="register-list-item-container15" ng-show="question==1">
+            <div id="register-markdown12" class="show-list-numbers-and-dots">
+              <p style="margin-top:0px;color:#184B20;font-size:20px;">
+                <strong>ABOUT YOU</strong>
+              </p>
+            </div>
+          </div>
+
+        <div id="register-form9" class="list" ng-show="question==1">
+          <ion-item id="register-list-item10">1 - Are you being referred to volunteer at Sutton Community Farm?</ion-item>
+            <ion-radio id="register-radio11" name="regform2.q1" ng-model="$parent.regform2.q1" ng-value="'A'" class="form item-text-wrap">A. Yes, I am being referred to volunteer</ion-radio>
+            <ion-radio id="register-radio13" name="regform2.q1" ng-model="$parent.regform2.q1" ng-value="'B'" class="form item-text-wrap">B. Yes, I am filling this form out on behalf of someone else who is being referred to volunteer</ion-radio>
+            <ion-radio id="register-radio12" name="regform2.q1" ng-model="$parent.regform2.q1" ng-value="'C'" class="form item-text-wrap">C. No, I am not being referred</ion-radio>
+        </div>
+        <div id="register-form4" class="list" ng-show="question==1">
+           <ion-item id="register-list-item9">2 - Please tick the volunteering activities you are interested in:</ion-item>
+           <ion-checkbox id="register-checkbox1" ng-model="$parent.regform2.q2a">Growing and harvesting</ion-checkbox>
+           <ion-checkbox id="register-checkbox2" ng-model="$parent.regform2.q2b">Packing vegetables</ion-checkbox>
+           <ion-checkbox id="register-checkbox3" ng-model="$parent.regform2.q2c">Supporting administration (marketing, artwork, etc.)</ion-checkbox>
+           <ion-checkbox id="register-checkbox4" ng-model="$parent.regform2.q2d">DIY and improving infrastructure</ion-checkbox>
+           <ion-checkbox id="register-checkbox9" ng-model="$parent.regform2.q2e">Other support (social/therapeutic horticulture)</ion-checkbox>
+           <ion-checkbox id="register-checkbox10" ng-model="$parent.regform2.q2f">Supporting events and markets</ion-checkbox>
+           <label class="item item-input" id="register-input11">
+             <span class="input-label">Other:</span>
+             <input type="text" placeholder="Type here" ng-model="$parent.regform2.q2g" name="regform2.q2g">
+           </label>
+        </div>
+        <div id="register-form15" class="list" ng-show="question==1">
+           <ion-item id="register-list-item11" class="item-text-wrap">3 - Please tell us why you would like to volunteer at Sutton Community Farm. Tick all that apply, you can also add extra reasons:</ion-item>
+           <ion-checkbox id="register-checkbox15" class="item-text-wrap" ng-model="$parent.regform2.q3a">To learn new skills</ion-checkbox>
+           <ion-checkbox id="register-checkbox17" class="item-text-wrap" ng-model="$parent.regform2.q3b">To meet people</ion-checkbox>
+           <ion-checkbox id="register-checkbox16" class="item-text-wrap" ng-model="$parent.regform2.q3c">For exercise</ion-checkbox>
+           <ion-checkbox id="register-checkbox19" class="item-text-wrap" ng-model="$parent.regform2.q3d">For enjoyment</ion-checkbox>
+           <ion-checkbox id="register-checkbox18" class="item-text-wrap" ng-model="$parent.regform2.q3e">To do something different</ion-checkbox>
+           <ion-checkbox id="register-checkbox20" class="item-text-wrap" ng-model="$parent.regform2.q3f">To improve my mental wellbeing</ion-checkbox>
+           <label class="item item-input" id="register-input15">
+             <span class="input-label">Other:</span>
+             <input type="text" placeholder="Type here" ng-model="$parent.regform2.q3g">
+           </label>
+         </div>
+         <div id="register-form23" class="list" ng-show="question==1">
+           <ion-item id="register-list-item22" class="item-text-wrap">4 - Please tick the statements applicable to you. This helps us understand how much support you might require with activities.</ion-item>
+           <ion-radio id="register-radio14" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'A'">A. I often take the initiative and enjoy having responsibility</ion-radio>
+           <ion-radio id="register-radio15" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'B'">B. Some tasks may not be appropriate for me (e.g. delicate jobs or very hard labour)</ion-radio>
+           <ion-radio id="register-radio17" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'C'">C. I am comfortable working independently with minimal instruction</ion-radio>
+           <ion-radio id="register-radio18" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'D'">D. Once I build my confidence and knowledge, I am able to work independently with minimal instruction.</ion-radio>
+           <ion-radio id="register-radio16" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'E'">E. I would always like to work with someone who can support me</ion-radio>
+           <ion-radio id="register-radio19" name="regform2.q4a" ng-model="$parent.regform2.q4a" class="item-text-wrap" ng-value="'F'">F. I need one-to-one support at all times</ion-radio>
+           <label class="item item-input item-stacked-label form" id="register-input21">
+             <span class="input-label">Please add any further information about the support you require:</span>
+             <input type="text" placeholder="Please include whether you are coming with a support worker" ng-model="$parent.regform2.q4b">
+           </label>
+         </div>
+        <div id="register-form24" class="list" ng-show="question==1">
+          <ion-item id="register-list-item31" class="item-text-wrap">5 - What relevant qualities, skills or experience do you have? Please include any life experiences and hobbies - it doesn't have to be paid work.</ion-item>
+          <label class="item item-input" id="register-input26">
+            <input type="text" placeholder="Type here" ng-model="$parent.regform2.q5">
+          </label>
+        </div>
+        <div id="register-form25" class="list" ng-show="question==1">
+          <ion-item id="register-list-item32" class="item-text-wrap">6 - Do you have any medical conditions, allergies, disabilities or existing injuries that may affect participation? Our staff will discuss these with volunteers in a sensitive and confidential manner.</ion-item>
+          <ion-radio id="register-radio26" name="regform2.q6a" ng-model="$parent.regform2.q6a" ng-value="1">Yes</ion-radio>
+          <ion-radio id="register-radio27" name="regform2.q6a" ng-model="$parent.regform2.q6a" ng-value="0">No</ion-radio>
+          <label class="item item-input item-stacked-label form" id="register-input29">
+            <span class="input-label">If yes, please give details of your condition:</span>
+            <input type="text" placeholder="Type here" ng-model="$parent.regform2.q6b">
+          </label>
+        </div>
+        <div id="register-form26" class="list" ng-show="question==1">
+          <ion-item id="register-list-item12" class="item-text-wrap">7 - Do you have a particular interest in supporting other volunteers at the Farm? This could include vulnerable adults and children, and would require additional training and DBS checks.</ion-item>
+          <ion-radio id="register-radio29" name="regform2.q7a" ng-model="$parent.regform2.q7a" ng-value="'A'">Yes</ion-radio>
+          <ion-radio id="register-radio30" name="regform2.q7a" ng-model="$parent.regform2.q7a" ng-value="'B'">No</ion-radio>
+          <ion-radio id="register-radio31" name="regform2.q7a" ng-model="$parent.regform2.q7a" ng-value="'C'">Not sure yet</ion-radio>
+          <label class="item item-input" id="register-input31">
+            <span class="input-label">Please give details:</span>
+            <input type="text" placeholder="Type here" ng-model="$parent.regform2.q7b">
+          </label>
+        </div>
+        <div id="register-form27" class="list" ng-show="question==1">
+          <ion-item id="register-list-item33" class="item-text-wrap">8 - To help us keep in touch with the Farm's community, would you like to be added to our Google Group? This is an online place to discuss the farm and communicate. You can leave anytime!</ion-item>
+          <ion-radio id="register-radio33" name="regform2.q8" ng-model="$parent.regform2.q8" ng-value="1">Yes</ion-radio>
+          <ion-radio id="register-radio34" name="regform2.q8" ng-model="$parent.regform2.q8" ng-value="0">No</ion-radio>
+        </div>
+        <div id="register-form29" class="list" ng-show="question==1">
+          <ion-item id="register-list-item35">9 - Where did you hear about Sutton Community Farm?</ion-item>
+          <label class="item item-select" id="register-select1">
+            <span class="input-label">Select</span>
+            <select ng-model="$parent.regform2.q9a">
+              <option>Advertisement</option>
+              <option>Email / Newsletter</option>
+              <option>Social media</option>
+              <option>Family member</option>
+              <option>Friend / Colleague</option>
+              <option>Newspaper / Magazine</option>
+              <option>Television / News program</option>
+              <option>Website / Search engine</option>
+            </select>
+          </label>
+          <label class="item item-input" id="register-input38">
+            <span class="input-label">Other:</span>
+            <input type="text" placeholder="Type here" ng-model="$parent.regform2.q9b">
+          </label>
+        </div>
+        <div id="register-form28" class="list" ng-show="question==1">
+          <ion-item id="register-list-item34" class="item-text-wrap">10 - Please enter the details of someone who can provide a character reference for you. This can be a friend, neighbour or colleague (not a family member). If you are a referrer, you can skip this question.</ion-item>
+          <label class="item item-input"
+                 id="register-input36">
+            <span class="input-label">Name</span>
+            <input type="text" placeholder="" ng-model="$parent.regform2.q10a">
+          </label>
+          <label class="item item-input" id="register-input41">
+            <span class="input-label">Email</span>
+            <input type="email" placeholder="" ng-model="$parent.regform2.q10b">
+          </label>
+          <label class="item item-input" id="register-input40">
+            <span class="input-label">Phone number</span>
+            <input type="tel" placeholder="" ng-model="$parent.regform2.q10c">
+          </label>
+        </div>
+        <div id="register-form30" class="list" ng-show="question==1">
+          <ion-item id="register-list-item36">11 - Who should we contact in the event of an emergency?</ion-item>
+          <label class="item item-input" id="register-input43">
+            <span class="input-label">Name</span>
+            <input type="text" placeholder="" ng-model="$parent.regform2.q11a">
+          </label>
+          <label class="item item-input" id="register-input44">
+            <span class="input-label">Phone number</span>
+            <input type="tel" placeholder="" ng-model="$parent.regform2.q11b">
+          </label>
+          <label class="item item-input" id="register-input45">
+            <span class="input-label">Relationship to you</span>
+            <input type="text" placeholder="" ng-model="$parent.regform2.q11c">
+          </label>
+        </div>
+        <div id="register-form31" class="list" ng-show="question==1">
+          <ion-item id="register-list-item37" class="item-text-wrap">12 - Please tick which days you are able to volunteer. Note that volunteering on days other than Wednesday must be arranged with Farm staff.</ion-item>
+          <ion-checkbox id="register-checkbox24" ng-model="$parent.regform2.q12a">Wednesday</ion-checkbox>
+          <ion-checkbox id="register-checkbox25" ng-model="$parent.regform2.q12b">Thursday (mornings)</ion-checkbox>
+          <ion-checkbox id="register-checkbox26" ng-model="$parent.regform2.q12c">Saturdays (fortnightly)</ion-checkbox>
+          <label class="item item-input" id="register-input47">
+            <span class="input-label">Other:</span>
+            <input type="text" placeholder="Type here" ng-model="$parent.regform2.q12d">
+          </label>
+        </div>
+        <div id="register-form32" class="list" ng-show="question==1">
+          <ion-item id="register-list-item38" class="item-text-wrap">13 - We really appreciate you volunteering with us and will do the best we can to make your volunteer experience enjoyable and rewarding. The Volunteer Agreement below describes the arrangement between Sutton Community Farm and you.</ion-item>
+
+          <div class="item item-body" id="register-list-item-container1">
+            <div id="register-markdown1" class="show-list-numbers-and-dots">
+
+              <p style="margin-top:0px;color:#000000;font-size:17px;">
+                <strong>VOLUNTEER AGREEMENT</strong>
+              </p>
+
+              <p style="color:#000000;font-size:17px;">Sutton Community Farm provides a practical, hands-on volunteering experience. The experience can be active and physically demanding.</p>
+
+              <p style="color:#000000;font-size:17px;">Our farm maintains a strong health and safety culture and aims to reduce risks to a minimum through risk assessments for our activities, careful planning and staff training.</p>
+
+              <p style="color:#000000;font-size:17px;">As with any outdoor activity, there are residual risks and these are managed by staff at Sutton Community Farm on an ongoing basis. This statement is designed to ensure that participants understand the nature of the activities and associated
+                risks.</p>
+
+              <p style="color:#000000;font-size:17px;">Please read the Code of Responsible Behaviour for more information about the activities and how to be safe. We also have a Health and Safety Policy and Risk Assessment available.</p>
+
+              <p style="color:#000000;font-size:17px;">This is available on our website: http://suttoncommunityfarm.org.uk/visit/volunteering/</p>
+              <p style="color:#000000;font-size:17px;">Sutton Community Farm reserves the right to refuse the offer of services to any volunteer at any time, or to terminate any work being done by a volunteer and require the volunteer to vacate the project.</p>
+
+              <p style="color:#000000;font-size:17px;"><strong>I confirm that I have read the statements above, and also read the Code of Responsible Behaviour. I understand the nature of the activities to be undertaken and consider that I am fit to take part. I do not suffer from any medical conditions not already disclosed. Furthermore, I will comply with all reasonable directions given by staff at Sutton Community Farm.</strong></p>
+
+            </div>
+
+            <div class="spacer" style="width: 1004px; height: 20px;"></div>
+
+            <div id="register-button-bar" class="button-bar form">
+              <!--<button id="register-button13" ng-click="back()" style="color:#184B20;" class="button button-light  button-block button-outline icon-left ion-android-close">Decline</button>
+              <button id="register-button14" ng-click="next()" style="color:#184B20;" class="button button-light  button-block button-outline icon-right ion-android-done">Agree</button> -->
+              <ion-checkbox id="register-checkbox" ng-model="$parent.regform2.q13a">Agree</ion-checkbox>
+            </div>
+          </div>
+
+          <label class="item item-input" id="register-input50">
+            <span class="input-label">Start Date:</span>
+            <input type="date" placeholder="Type here" ng-model="$parent.regform2.q13b">
+          </label>
+        </div>
+
+        <button type="submit" ng-click="next()" ng-disabled="!$parent.regform2.q13a" ng-show="question==1" id="register-button10" style="color:#000000;" class="button button-stable  button-block">Submit</button>
+    </form>
+
+    <form id="register-form33" class="list" ng-show="question==2">
+        <div class="item item-body" id="register-list-item-container13">
+          <div id="register-markdown17" class="show-list-numbers-and-dots">
+
+            <p style="margin-top:0px;color:#000000;font-size:17px;">
+              <strong>INCLUSIVITY FORM</strong>
+            </p>
+
+            <p style="margin-top:0px;color:#000000;font-size:17px;">To improve our services and find out who we are reaching, we monitor diversity information. Your replies are confidential and will not be used in any way that identifies you.</p>
+            <p style="margin-top:0px;color:#000000;font-size:17px;">It is entirely optional whether you choose to give this information. You can click the back button at any stage to exit.</p>
+
+            <p style="color:#000000;font-size:17px;">Would you like to complete our inclusivity form?</p>
+          </div>
+          <div class="spacer" style="width: 1004px; height: 20px;"></div>
+          <div id="register-button-bar2" class="button-bar form">
+            <button id="register-button13" ng-click="back()" style="color:#184B20;" class="button button-light  button-block button-outline icon-left ion-android-close">No thanks</button>
+            <button id="register-button14" ng-click="next()" style="color:#184B20;" class="button button-light  button-block button-outline icon-right ion-android-done">OK</button>
+          </div>
+        </div>
+    </form>
+
+    <form id="register-form35" class="list" ng-show="question==3" ng-submit="register3()">
+
+      <div class="item item-body" id="register-list-item-container14" ng-show="question==3">
+        <div id="register-markdown14" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#184B20;font-size:20px;">
+            <strong>INCLUSIVITY FORM</strong>
+          </p>
+          <p style="margin-top:0px;color:#000000;font-size:17px;">To improve our services and find out who we are reaching, we monitor diversity information. Your replies are confidential and will not be used in a way that identifies you.</p>
+          <p style="margin-top:0px;color:#000000;font-size:17px;">It is entirely optional whether you choose to give this information.</p>
+          <p style="margin-top:0px;color:#000000;font-size:17px;">You can click back button at any stage to exit this form.</p>
+
+        </div>
+      </div>
+
+      <div id="register-form38" class="list" ng-show="question==3">
+        <ion-item id="register-list-item13" class="item-text-wrap">1 - Please select your age category:</ion-item>
+        <ion-radio id="register-radio44" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="1" >A. Under 16 years</ion-radio>
+        <ion-radio id="register-radio45" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="2" >B. 16 - 24 years</ion-radio>
+        <ion-radio id="register-radio46" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="3" >C. 25 - 34 years</ion-radio>
+        <ion-radio id="register-radio47" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="4" >D. 35 - 44 years</ion-radio>
+        <ion-radio id="register-radio48" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="5" >E. 45 - 64 years</ion-radio>
+        <ion-radio id="register-radio49" name="regform3.q1" ng-model="$parent.regform3.q1" ng-value="6" >F. 65 years or over</ion-radio>
+      </div>
+      <div id="register-form39" class="list" ng-show="question==3">
+        <ion-item id="register-list-item17" class="item-text-wrap">2 - Please select your gender:</ion-item>
+        <ion-radio id="register-radio50" name="regform3.q2a" ng-model="$parent.regform3.q2a" ng-value="1">A. Male</ion-radio>
+        <ion-radio id="register-radio51" name="regform3.q2a" ng-model="$parent.regform3.q2a" ng-value="2">B. Female</ion-radio>
+        <label class="item item-input" id="register-input35">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q2b">
+        </label>
+      </div>
+      <div id="register-form40" class="list" ng-show="question==3">
+        <ion-item id="register-list-item18" class="item-text-wrap">3 - Please select your sexual orientation:</ion-item>
+        <ion-radio id="register-radio57" name="regform3.q3a" ng-model="$parent.regform3.q3a" ng-value="1">A. Bisexual</ion-radio>
+        <ion-radio id="register-radio58" name="regform3.q3a" ng-model="$parent.regform3.q3a" ng-value="2">B. Lesbian or gay woman</ion-radio>
+        <ion-radio id="register-radio59" name="regform3.q3a" ng-model="$parent.regform3.q3a" ng-value="3">C. Gay man</ion-radio>
+        <ion-radio id="register-radio61" name="regform3.q3a" ng-model="$parent.regform3.q3a" ng-value="4">D. Heterosexual</ion-radio>
+        <label class="item item-input" id="register-input37">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q3b">
+        </label>
+      </div>
+      <div id="register-form41" class="list" ng-show="question==3">
+        <ion-item id="register-list-item19" class="item-text-wrap">4 - Please select your ethnicity:</ion-item>
+        <ion-radio id="register-radio62" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="1">A. White-British</ion-radio>
+        <ion-radio id="register-radio63" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="2">B. White-Irish</ion-radio>
+        <ion-radio id="register-radio64" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="3">C. White: any other White background</ion-radio>
+        <ion-radio id="register-radio65" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="4">D. Mixed: White and Black Caribbean</ion-radio>
+        <ion-radio id="register-radio66" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="5">E. Mixed: White and Asian</ion-radio>
+        <ion-radio id="register-radio67" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="6">F. Mixed: White and Black African</ion-radio>
+        <ion-radio id="register-radio68" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="7">G. Mixed: any other Mixed background</ion-radio>
+        <ion-radio id="register-radio69" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="8">H. Asian or Asian-British: Indian</ion-radio>
+        <ion-radio id="register-radio70" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="9">I. Asian or Asian-British: Pakistani</ion-radio>
+        <ion-radio id="register-radio71" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="10">J. Asian or Asian-British: Bangladeshi</ion-radio>
+        <ion-radio id="register-radio72" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="11">K. Asian or Asian-British: any other Asian background</ion-radio>
+        <ion-radio id="register-radio73" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="12">L. Black or Black-British: Caribbean</ion-radio>
+        <ion-radio id="register-radio74" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="13">M. Black or Black-British: African</ion-radio>
+        <ion-radio id="register-radio75" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="14">N. Black or Black-British: any other Black background</ion-radio>
+        <ion-radio id="register-radio76" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="15">O. Chinese</ion-radio>
+        <ion-radio id="register-radio78" name="regform3.q4a" ng-model="$parent.regform3.q4a" ng-value="17">P. Rather not say</ion-radio>
+        <label class="item item-input" id="register-input39">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q4b">
+        </label>
+      </div>
+      <div id="register-form42" class="list" ng-show="question==3">
+        <ion-item id="register-list-item23" class="item-text-wrap">5 - Disability: are your day-to-day activities limited because of a health problem or disability which has lasted, or is expected to last, at least 12 months?</ion-item>
+        <ion-radio id="register-radio80" name="regform3.q5" ng-model="$parent.regform3.q5" ng-value="1">A. Yes</ion-radio>
+        <ion-radio id="register-radio81" name="regform3.q5" ng-model="$parent.regform3.q5" ng-value="2">B. No</ion-radio>
+        <ion-radio id="register-radio96" name="regform3.q5" ng-model="$parent.regform3.q5" ng-value="3">C. Rather not say</ion-radio>
+      </div>
+      <div id="register-form43" class="list" ng-show="question==3">
+        <ion-item id="register-list-item24" class="item-text-wrap">6 - Caring responsibilities: do you regularly provide unpaid support caring for someone? A carer is someone who spends a significant proportion of their time providing unpaid support to a family member, partner or friend who is ill, frail, disabled
+          or has mental health or substance misuse problems.</ion-item>
+        <ion-radio id="register-radio97" name="regform3.q6" ng-model="$parent.regform3.q6" ng-value="1">A. Yes</ion-radio>
+        <ion-radio id="register-radio98" name="regform3.q6" ng-model="$parent.regform3.q6" ng-value="2">B. No</ion-radio>
+      </div>
+      <div id="register-form44" class="list" ng-show="question==3">
+        <ion-item id="register-list-item25" class="item-text-wrap">7 - Please select your religion or beliefs:</ion-item>
+        <ion-radio id="register-radio100" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="1">A. Atheist / No religious beliefs</ion-radio>
+        <ion-radio id="register-radio101" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="2">B. Buddhist</ion-radio>
+        <ion-radio id="register-radio102" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="3">C. Christian</ion-radio>
+        <ion-radio id="register-radio103" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="4">D. Hindu</ion-radio>
+        <ion-radio id="register-radio104" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="5">E. Jewish</ion-radio>
+        <ion-radio id="register-radio105" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="6">F. Muslim</ion-radio>
+        <ion-radio id="register-radio106" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="7">G. Secular beliefs</ion-radio>
+        <ion-radio id="register-radio107" name="regform3.q7a" ng-model="$parent.regform3.q7a" ng-value="8">H. Sikh</ion-radio>
+        <label class="item item-input" id="register-input48">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q7b">
+        </label>
+      </div>
+      <div id="register-form45" class="list" ng-show="question==3">
+        <ion-item id="register-list-item26" class="item-text-wrap">8 - Please select your current employment status:</ion-item>
+        <ion-radio id="register-radio109" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">A. Working full-time</ion-radio>
+        <ion-radio id="register-radio110" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">B. Working part-time</ion-radio>
+        <ion-radio id="register-radio111" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">C. Unemployed</ion-radio>
+        <ion-radio id="register-radio112" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">D. Not working - retired</ion-radio>
+        <ion-radio id="register-radio113" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">E. Not working - looking after house / children</ion-radio>
+        <ion-radio id="register-radio114" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">F. Not working - invalid / disabled</ion-radio>
+        <ion-radio id="register-radio115" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">G. Student with some part-time work</ion-radio>
+        <ion-radio id="register-radio116" name="regform3.q8a" ng-model="$parent.regform3.q8a" ng-value="1">H. Student without part-time work</ion-radio>
+
+        <label class="item item-input" id="register-input51">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q8b">
+        </label>
+      </div>
+
+      <div id="register-form46" class="list" ng-show="question==3">
+        <ion-item id="register-list-item28" class="item-text-wrap">9 - Do you rent from the council or a housing association?</ion-item>
+        <ion-radio id="register-radio117" name="regform3.q9a" ng-model="$parent.regform3.q9a" ng-value="1">A. Yes</ion-radio>
+        <ion-radio id="register-radio118" name="regform3.q9a" ng-model="$parent.regform3.q9a" ng-value="2">B. No</ion-radio>
+        <label class="item item-input" id="register-input52">
+          <span class="input-label">Other:</span>
+          <input type="text" placeholder="Type here" ng-model="$parent.regform3.q9b">
+        </label>
+      </div>
+
+      <div id="register-form47" class="list" ng-show="question==3">
+        <ion-item id="register-list-item29" class="item-text-wrap">10 - What is the highest degree or level of schooling you have completed?</ion-item>
+        <ion-radio id="register-radio125" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="1">A. No schooling</ion-radio>
+        <ion-radio id="register-radio126" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="2">B. Primary school</ion-radio>
+        <ion-radio id="register-radio127" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="3">C. Some secondary school</ion-radio>
+        <ion-radio id="register-radio128" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="4">D. Secondary school graduate</ion-radio>
+        <ion-radio id="register-radio129" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="5">E. Trade or vocational education</ion-radio>
+        <ion-radio id="register-radio130" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="6">F. College graduate</ion-radio>
+        <ion-radio id="register-radio131" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="7">G. Bachelor's degree</ion-radio>
+        <ion-radio id="register-radio132" name="regform3.q10" ng-model="$parent.regform3.q10" ng-value="8">H. Postgraduate degree</ion-radio>
+      </div>
+      <button type="submit" ng-click="submit()" id="register-button11" ng-show="question==3" style="color:#000000;" class="button button-stable  button-block">Submit</button>
+    </form>
+
+    <!-- These two buttons are used to navigate the forms when test and demo, so that we do not need to fill the forms every time we test.
+    <div id="register-button-bar1" class="button-bar form">
+      <button id="register-button25" ng-click="last()" ng-show="question<4 && question>0" style="color:#184B20;" class="button button-light  button-block button-outline icon-left ion-android-arrow-back">Back</button>
+      <button id="register-button27" ng-click="next()" ng-show="question<4" style="color:#184B20;" class="button button-light  button-block button-outline icon-right ion-android-arrow-forward">Next</button>
+    </div>
+    -->
+
+  </div>
+</ion-content>
+</ion-view>

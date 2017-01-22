@@ -1,0 +1,46 @@
+<ion-view title="Visitor Registration" id="page8">
+  <ion-content padding="true" style="background: url(img/bKKYkKnxRb2MDsSoGvUg_vegetables-752153_1920.jpg) no-repeat top;background-size:cover;" class="has-header">
+    <div class="spacer" style="width: 748px; height: 170px;"></div>
+    <div class="item item-body" id="visitor-list-item-container4">
+      <div id="visitor-markdown7" style="text-align:center;" class="show-list-numbers-and-dots">
+        <p style="margin-top:0px;color:#000000;font-size:20px;">Welcome to Sutton Community Farm!</p>
+
+        <p style="color:#000000;font-size:20px;">We are delighted to welcome you here, and would love it if you could let us know more about you by filling in your details below.</p>
+      </div>
+      <div class="spacer" style="width: 716px; height: 29px;"></div>
+
+      <form id="visitor-form11" class="list" ng-show="position==0" name="visitorform" ng-submit="visitreg()">
+        <label class="item item-input" id="visitor-input10">
+          <span class="input-label">First name</span>
+          <input type="text" placeholder="" ng-required="true" name="visitor.firstname" ng-model="visitor.firstname">
+        </label>
+        <label class="item item-input" id="visitor-input13">
+          <span class="input-label">Last name</span>
+          <input type="text" placeholder="" ng-required="true" name="visitor.lastname" ng-model="visitor.lastname">
+        </label>
+        <label class="item item-input" id="visitor-input14">
+          <span class="input-label">Email address</span>
+          <input type="email" placeholder="" ng-required="true" name="visitor.email" ng-model="visitor.email">
+        </label>
+        <label class="item item-input" id="visitor-input9">
+          <span class="input-label">Date of birth</span>
+          <input type="date" placeholder="" ng-required="true" name="visitor.dateOfBirth" ng-model="visitor.dateOfBirth">
+        </label>
+        <label class="item item-input" id="visitor-input12">
+          <span class="input-label">Phone number</span>
+          <input type="tel" placeholder="" name="visitor.phone" ng-model="visitor.phone">
+        </label>
+
+        <button type="submit" ng-disabled="visitorform.$invalid" ng-click="next()" id="visitor-button9" style="color:#000000;" class="button button-stable  button-block">Submit</button>
+
+      </form>
+
+      <div class="item item-body" id="visitor-list-item-container12" ng-show="position==1">
+        <h1 id="visitor-heading11" style="color:#184B20;font-weight:300;text-align:center;">Thank you for registering!</h1>
+        <a ui-sref="menu.volunteers" id="visitor-button16" style="color:#184B20;" class="button button-stable  button-block button-outline">Done</a>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

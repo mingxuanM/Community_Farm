@@ -1,0 +1,31 @@
+<ion-view title="Administrator Area" id="page4">
+  <ion-content padding="true" style="background: url(img/hcJae36PSxqVO4i3Mtps_books-1757734_1920.jpg) no-repeat top;background-size:cover;" class="has-header">
+    <div class="spacer" style="height: 210px;"></div>
+
+    <div class="item item-body" id="administraterLogin-list-item-container9" ng-show="!log">
+      <h2 id="administraterLogin-heading5" style="color:#000000;font-weight:400;text-align:center;">Log in to the Administrator account</h2>
+      <div class="spacer" style="height: 40px;"></div>
+      <form id="administraterLogin-form20" name="passwordform" class="list" ng-submit="login()">
+        <label class="item item-input" id="administraterLogin-input16">
+          <span class="input-label">Password</span>
+          <input type="password" placeholder="" ng-model="admin.password" ng-required="true">
+        </label>
+
+        <ion-item style="color:#FF0000;" id="administraterLogin-list-item37" ng-show="error">Invalid Password</ion-item>
+
+        <button ng-disabled="passwordform.$invalid" type="submit" id="administraterLogin-button6" style="color:#184B20;" class="button button-stable  button-block">Log in</button>
+      </form>
+    </div>
+
+    <div class="item item-body" id="administraterLogin-container1" ng-show="log">
+      <h2 id="administraterLogin-heading16" style="color:#000000;font-weight:400;text-align:center;">You are logged in to the Administrator account</h2>
+      <div class="spacer" style="width: 1004px; height: 20px;"></div>
+      <a ui-sref="menu.volunteersList" id="administraterLogin-button18" style="color:#184B20;" class="button button-stable  button-block">Volunteer registration data</a>
+      <a ui-sref="menu.visitorsList" id="administraterLogin-button24" style="color:#184B20;" class="button button-stable  button-block">Visitor registration data</a>
+      <a ui-sref="menu.signingRecords" id="administraterLogin-button12" style="color:#184B20;" class="button button-stable  button-block">Visitation records</a>
+      <div class="spacer" style="width: 1004px; height: 20px;"></div>
+      <button ng-click="logout()" id="administraterLogin-button26" style="color:#184B20;" class="button button-stable  button-block">Log out</button>
+    </div>
+
+  </ion-content>
+</ion-view>

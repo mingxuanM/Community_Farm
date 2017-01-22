@@ -1,0 +1,43 @@
+$assertive: #EB4A78;
+$SIDEMENU_TRANSPARENCY: rgba(0,0,0,0.07);
+$LISTITEM_TRANSPARENCY: rgba(0,0,0,0.008);
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.side-menu-item {
+	background: none;
+	color: black;
+	font-weight: 300;
+	border: 0px;
+	.item-content {
+		background: none;
+		&.activated {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+		
+	}
+	&.active-page-highlight {
+		.item-content {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+		
+	}
+}
+.right-round-button {
+	position: absolute;
+	right: 20px;
+	height: 30px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 1.428571429;
+	border-radius: 15px;
+}
+
+.signOutButton {
+	position: relative;
+	left: 20px;
+}
+
+.form {
+	background: $LISTITEM_TRANSPARENCY;
+}
+

@@ -1,0 +1,26 @@
+<ion-view title="Visitation Records" id="page14">
+  <ion-content padding="true" class="has-header">
+
+    <div id="visitorTable" class="table-scroll">
+      <table width="100%">
+        <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Sign in time</th>
+          <th>Sign out time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="record in records">
+          <td>{{record.firstname}}</td>
+          <td>{{record.lastname}}</td>
+          <td>{{record.signIn}}</td>
+          <td>{{record.signOut}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </ion-content>
+</ion-view>

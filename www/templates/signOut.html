@@ -1,0 +1,43 @@
+<ion-view title="Sign Out" id="page12" style="background-color:#F8F8F8;">
+  <ion-content padding="true" style="background: url(img/skfFiEOJRwepNHN36C3d_books-1757734_1920.jpg) no-repeat top;background-size:cover;" class=" manual-remove-top-padding has-header">
+    <div class="spacer" style="width: 300px; height: 130px;"></div>
+    <div class="item item-body" id="signOut-list-item-container10">
+      <div>
+        <img src="img/FJUU8BcSQ91B4ZrBHYhZ_edxYE6IiTXO8slw8Gz9c_farm-logo-2012.jpg" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="spacer" style="width: 716px; height: 42px;"></div>
+
+      <form id="signOut-form21" name="signoutform" ng-submit="signout()" class="list" ng-show="!signedin" novalidate>
+        <h2 id="signOut-heading14" style="color:#000000;font-weight:400;">Please enter your first name:</h2>
+        <div class="spacer" style="width: 716px; height: 10px;"></div>
+
+        <label class="item item-input" id="signOut-text1">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" name="user.firstname" placeholder="First name" ng-model="user.firstname" ng-required="true">
+        </label>
+
+        <button type="button" ng-Click="findLastName()" id="signIn-button11" ng-show="!signedin" style="color:#000000;" class="button button-stable  button-block">Find your name</button>
+
+
+        <!-- <label class="item item-input" id="signOut-text2">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" name="user.lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+        </label> -->
+
+        <label class="item item-select" id="register-select1">
+          <span class="input-label">Choose your last name</span>
+          <select ng-model="user.lastname" ng-required="true">
+            <option ng-repeat="item in lastNames">{{item.lastname}}</option>
+          </select>
+        </label>
+
+        <div class="spacer" style="width: 716px; height: 36px;"></div>
+
+        <button type="submit" ng-disabled="signoutform.$invalid" id="signOut-button19" ng-show="!signedin" style="color:#000000;" class="button button-stable  button-block">Sign out</button>
+      </form>
+
+      <h2 id="signOut-heading9" ng-show="signedin" style="color:#000000;">You are now signed out. Thank you.</h2>
+      <a ui-sref="menu.volunteers" id="signOut-button20" ng-show="signedin" ng-click="init_signedin()" style="color:#050505;" class="button button-stable  button-block">Done</a>
+    </div>
+  </ion-content>
+</ion-view>

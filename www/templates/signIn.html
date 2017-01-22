@@ -1,0 +1,43 @@
+<ion-view title="Sign In" id="page5" style="background-color:#F8F8F8;">
+  <ion-content padding="true" style="background: url(img/QR82S7vGRXSs2y9wsedL_vegetables-752153_1920.jpg) no-repeat top;background-size:cover;" class=" manual-remove-top-padding has-header">
+    <div class="spacer" style="width: 300px; height: 130px;"></div>
+    <div class="item item-body" id="signIn-list-item-container8">
+      <div>
+        <img src="img/edxYE6IiTXO8slw8Gz9c_farm-logo-2012.jpg" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <div class="spacer" style="width: 716px; height: 42px;"></div>
+
+      <form id="signIn-form19" name="signinform" ng-submit="signin()" class="list" ng-show="!signedin" novalidate>
+        <h2 id="signIn-heading15" style="color:#000000;font-weight:400;">Please enter your first name:</h2>
+        <div class="spacer" style="width: 716px; height: 10px;"></div>
+
+        <label class="item item-input" id="signIn-text1">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" name="user.firstname" placeholder="First name" ng-model="user.firstname" ng-required="true">
+        </label>
+
+        <button type="button" ng-Click="findLastName()" id="signIn-button11" ng-show="!signedin" style="color:#000000;" class="button button-stable  button-block">Find your name</button>
+
+
+        <!-- <label class="item item-input" id="signIn-text2">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" name="user.lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+        </label> -->
+
+        <label class="item item-select" id="register-select1">
+          <span class="input-label">Choose your last name</span>
+          <select ng-model="user.lastname" ng-required="true">
+            <option ng-repeat="item in lastNames">{{item.lastname}}</option>
+          </select>
+        </label>
+
+        <div class="spacer" style="width: 716px; height: 36px;"></div>
+
+        <button type="submit" ng-disabled="signinform.$invalid" id="signIn-button9" ng-show="!signedin" style="color:#000000;" class="button button-stable  button-block">Sign in</button>
+      </form>
+
+      <h2 id="signIn-heading8" ng-show="signedin" style="color:#000000;">You are now signed in. Thank you.</h2>
+      <a ui-sref="menu.volunteers" id="signIn-button10" ng-show="signedin" class="button button-stable  button-block">Done</a>
+    </div>
+  </ion-content>
+</ion-view>
